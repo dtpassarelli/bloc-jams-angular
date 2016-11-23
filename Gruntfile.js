@@ -80,28 +80,6 @@ module.exports = function(grunt) {
 
 };
 
-module.exports = function(grunt) {
-    
-    grunt.registerTask('default', 'Testing out Grunt logging and task callbacks', ['watch']);
+
     
     
-    grunt.initConfig({
-        watch: {
-            files: ['Gruntfile.js']
-        },
- 
-        copy: {
-            main: {
-                files: {
-                    './dest/': ['assets/js/*.js']
-                }
-            }
-        }
-    });
-                   
-            
-    
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-   
- };
