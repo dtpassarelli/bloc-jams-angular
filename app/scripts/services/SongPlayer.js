@@ -28,12 +28,17 @@
 		    currentSong = song;
 		 };
 
+		 var playSong = function() {
+		 	currentBuzzObject.play();
+         	song.playing = true; 
+
+		 };
+
 
          SongPlayer.play = function(song) {
          	
          	setSong(song);
-         	currentBuzzObject.play();
-         	song.playing = true; 
+         	playSong();
 
          } else if (currentSong === song) {
                  if (currentBuzzObject.isPaused()) {
