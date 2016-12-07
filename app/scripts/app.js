@@ -6,7 +6,7 @@
             .html5Mode({
                 enabled: true,
                 requireBase: false
-         });
+            });
          $stateProvider
             .state('landing', {
                 url: '/',
