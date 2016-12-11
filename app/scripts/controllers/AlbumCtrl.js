@@ -6,7 +6,7 @@
      	this.yearOfLabel = "Turn the Music Up!";
      	this.albums = [];
      	this.albumData = Fixtures.getAlbum();
-     	}
+     	
      }
  
      angular

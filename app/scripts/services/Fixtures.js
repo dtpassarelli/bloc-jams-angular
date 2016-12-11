@@ -37,8 +37,10 @@
          return Fixtures;
 
          Fixtures.getCollection = function(numberOfAlbums) {
-         	
-         }
+         	var numSongs = [];
+            numSongs.push(numberOfAlbums);
+         };
+         return numSongs;
      }
  
      angular
