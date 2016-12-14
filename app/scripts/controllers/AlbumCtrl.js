@@ -7,7 +7,7 @@
      	this.albums = [];
      	this.albumData = Fixtures.getAlbum();
      	this.songPlayer = SongPlayer;
-     	}
+     	
      }
  
      angular
