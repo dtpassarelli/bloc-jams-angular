@@ -81,6 +81,10 @@ module.exports = function(grunt) {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> checkpoint-3-assignment
+=======
+
+>>>>>>> checkpoint-4-templates
