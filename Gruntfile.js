@@ -80,4 +80,7 @@ module.exports = function(grunt) {
 
 };
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> checkpoint-3-assignment
