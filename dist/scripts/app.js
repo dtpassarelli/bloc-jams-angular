@@ -11,6 +11,7 @@
             .state('landing', {
                 url: '/',
                 templateUrl: '/templates/landing.html'
+<<<<<<< HEAD
              })
             .state('album', {
                  url: '/album',
@@ -20,6 +21,13 @@
                 url: '/collection',
                 templateUrl: '/templates/collection.html'
             });
+=======
+         })
+         .state('album', {
+             url: '/album',
+             templateUrl: '/templates/album.html'
+         });
+>>>>>>> checkpoint-2-assignment
      }
  
      angular
