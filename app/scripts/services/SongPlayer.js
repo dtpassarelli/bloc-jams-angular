@@ -1,5 +1,5 @@
 (function() {
-     function SongPlayer($rootScope, Fixtures) {
+    function SongPlayer($rootScope, Fixtures) {
         var SongPlayer = {};
 
         var currentAlbum = Fixtures.getAlbum();
@@ -30,7 +30,7 @@
  * @desc Stops currently playing song and loads new audio file as currentBuzzObject
  * @param {Object} song
  */
-     	 var setSong = function(song) {
+     	var setSong = function(song) {
 		    if (currentBuzzObject) {
 		        currentBuzzObject.stop();
 		        currentSong.playing = null;
@@ -48,22 +48,22 @@
             });
 		 
 		    currentSong = song;
-		 };
+	    };
 
-		 var playSong = function() {
+		var playSong = function() {
 		 	currentBuzzObject.play();
          	song.playing = true; 
 
-		 };
+		};
 
 
-         SongPlayer.play = function(song) {
+        SongPlayer.play = function(song) {
          	song = song || SongPlayer.currentSong;
             if (SongPlayer.currentSong !== song) {
-         	  setSong(song);
-         	  playSong();
+         	    setSong(song);
+         	    playSong();
 
-         } else if (currentSong === song) {
+        } else if (currentSong === song) {
                  if (currentBuzzObject.isPaused()) {
              		currentBuzzObject.play();
          		}
@@ -102,9 +102,9 @@
             }
 
           return SongPlayer;
-     }
+        }
  
-     angular
-         .module('blocJams')
-         .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
- })();
+    angular
+        .module('blocJams')
+        .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
+})();
