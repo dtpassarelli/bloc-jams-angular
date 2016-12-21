@@ -1,7 +1,7 @@
 (function() {
-     function AlbumCtrl() {
-     	this.albumData = angular.copy(albumPicasso);
-     }
+    function AlbumCtrl() {
+        this.albumData = angular.copy(albumPicasso);
+    }
  
      angular
          .module('blocJams')
