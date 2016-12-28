@@ -1,12 +1,24 @@
 (function() {
-    function SongPlayer() {
+     function SongPlayer(Fixtures) {
         var SongPlayer = {};
 
-        var currentSong = null;
+        var currentAlbum = Fixtures.getAlbum();
+
+        var stopSong = function() {
+            currentBuzzObject.stop();
+            SongPlayer.currentSong.playing = null;
+        }; 
+
+        var getSongIndex = function(song) {
+            return currentAlbum.songs.indexOf(song);
+        };
+
          /**
  * @desc Buzz object audio file
  * @type {Object}
  */
+        SongPlayer.currentSong = null;
+
 
      	var currentBuzzObject = null;
      	 /**
@@ -35,10 +47,12 @@
 		};
 
 
+
         SongPlayer.play = function(song) {
-         	
-         	setSong(song);
-         	playSong();
+         	song = song || SongPlayer.currentSong;
+            if (SongPlayer.currentSong !== song) {
+         	  setSong(song);
+         	  playSong();
 
         } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
@@ -48,11 +62,35 @@
      	};
 
      	SongPlayer.pause = function(song) {
-		    
+		    song = song || SongPlayer.currentSong;
 		    currentBuzzObject.pause();
 		    song.playing = false;
  		};
 
+        SongPlayer.previous = function() {
+            var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+            currentSongIndex--;
+
+            if (currentSongIndex < 0) {
+                stopSong();
+            } else {
+                var song = currentAlbum.songs[currentSongIndex];
+                setSong(song);
+                playSong(song);
+            }
+        };
+
+        SongPlayer.next = function() {
+            var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+            currentSongIndex++;
+
+            if (currentSongIndex > 0) {
+                stopSong();
+            } else {
+                var song = currentAlbum.songs[currentSongIndex];
+                setSong(song);
+                playSong(song);
+            }
 
           return SongPlayer;
     }
