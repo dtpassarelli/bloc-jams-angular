@@ -49,14 +49,13 @@
 
 
         SongPlayer.play = function(song) {
-         	song = song || SongPlayer.currentSong;
-            if (SongPlayer.currentSong !== song) {
+         	if (currentSong !== song) {
          	  setSong(song);
          	  playSong();
 
-        } else if (currentSong === song) {
+            } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
-             		playSong();
+             		currentBuzzObject.play();
          		}
          	} 
      	};
