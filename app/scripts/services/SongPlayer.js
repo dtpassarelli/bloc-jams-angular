@@ -24,7 +24,11 @@
  */
         SongPlayer.currentTime = null;
 
+        SongPlayer.volume = null;
+
      	var currentBuzzObject = null;
+
+
      	 /**
  * @function setSong
  * @desc Stops currently playing song and loads new audio file as currentBuzzObject
@@ -56,6 +60,11 @@
 
 		};
 
+        
+
+        SongPlayer.setVolume = function() {
+            currentBuzzObject.setVolume(90);
+        };
 
         SongPlayer.play = function(song) {
          	song = song || SongPlayer.currentSong;
