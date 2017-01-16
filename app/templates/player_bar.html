@@ -7,11 +7,11 @@
              <a class="play-pause">
                 <span class='ion-play'
                     ng-show="!playerBar.songPlayer.currentSong.playing"
-                    ng-click="playerBar.songPlayer.play()"> {{ playBar.albumData playBar.songPlayer}}
+                        ng-click="playerBar.songPlayer.play()"> {{ playBar.albumData }} {{ playBar.songPlayer }}
                 </span>
                 <span class='ion-pause'
                     ng-show="playerBar.songPlayer.currentSong.playing"
-                    ng-click="playerBar.songPlayer.pause()"> {{ playBar.albumData playBar.songPlayer}}
+                    ng-click="playerBar.songPlayer.pause()"> {{ playBar.albumData }} {{ playBar.songPlayer }}
                 </span>
                        
              </a>

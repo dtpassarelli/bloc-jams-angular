@@ -7,11 +7,11 @@
              <a class="play-pause">
                 <span class='ion-play'
                     ng-show="!playerBar.songPlayer.currentSong.playing"
-                    ng-click="playerBar.songPlayer.play()"> {{ playBar.albumData playBar.songPlayer}}
+                        ng-click="playerBar.songPlayer.play()"> {{ playBar.albumData }} {{ playBar.songPlayer }}
                 </span>
                 <span class='ion-pause'
                     ng-show="playerBar.songPlayer.currentSong.playing"
-                    ng-click="playerBar.songPlayer.pause()"> {{ playBar.albumData playBar.songPlayer}}
+                    ng-click="playerBar.songPlayer.pause()"> {{ playBar.albumData }} {{ playBar.songPlayer }}
                 </span>
                        
              </a>
@@ -24,9 +24,9 @@
              <h2 class="artist-song-mobile"></h2>
              <h3 class="artist-name"></h3>
              <div class="seek-control">
-                 <seek-bar value="{{ playerBar.songPlayer.currentTime }}" max="{{ playerBar.songPlayer.currentSong.duration }}"></seek-bar>
-                 <div class="current-time">{{ setSong }}</div>
-                 <div class="total-time"></div>
+                 <seek-bar val="{{ playerBar.songPlayer.volume }}" max="{{ playerBar.songPlayer.maxVolume }}"></seek-bar>
+                 <div class="current-time">{{ playBar.songPlayer.currentTime | timecode }}</div>
+                 <div class="total-time">{{ playerBar.songPlayer.currentSong.duration | timecode }}</div>
              </div>
          </div>
          <div class="control-group volume">

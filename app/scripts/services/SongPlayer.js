@@ -109,8 +109,11 @@
                 playSong(song);
             }
 
-          return SongPlayer;
+          
         }
+
+        return SongPlayer;
+    }
  
     angular
         .module('blocJams')
