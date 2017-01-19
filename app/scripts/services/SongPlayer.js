@@ -50,8 +50,8 @@
                     SongPlayer.currentTime = currentBuzzObject.getTime();
                 });
             });
-		 
-		    currentSong = song;
+            debugger;
+		    songPlayer.currentSong = song;
 	    };
 
 		var playSong = function() {
@@ -67,7 +67,8 @@
         };
 
         SongPlayer.play = function(song) {
-         	if (currentSong !== song) {
+         	debugger;
+            if (currentSong !== song) {
          	  setSong(song);
          	  playSong();
 

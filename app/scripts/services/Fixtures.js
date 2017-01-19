@@ -37,15 +37,13 @@
          
 
          Fixtures.getCollection = function(numberOfAlbums) {
-            debugger;
             // make x copies of fixtures.getAlbum and push them into an array and return it.
          	var numSongs = [];
-            numberOfAlbums.times {
-                for (var i = 0; numSongs <= 12; i++) {
-                numSongs.push( this.getAlbum() )
-                }
+             
+            for (var i = 0; numSongs <= 12; i++) {
+                numSongs.push( this.getAlbum() );
             }
-            numSongs.push(numberOfAlbums);
+            
             return numSongs;
          };
          
