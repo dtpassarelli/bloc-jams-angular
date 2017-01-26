@@ -4,9 +4,9 @@
 
         var currentAlbum = Fixtures.getAlbum();
 
-        var stopSong = function() {
+        var stopSong = function(song) {
             currentBuzzObject.stop();
-            SongPlayer.currentSong.playing = null;
+            song.playing = null;
         }; 
 
         var getSongIndex = function(song) {
@@ -50,31 +50,39 @@
                     SongPlayer.currentTime = currentBuzzObject.getTime();
                 });
             });
-            debugger;
-		    songPlayer.currentSong = song;
+            
+		    SongPlayer.currentSong = song;
 	    };
 
-		var playSong = function() {
+		var playSong = function(song) {
 		 	currentBuzzObject.play();
          	song.playing = true; 
 
 		};
 
+        SongPlayer.setCurrentTime = function(time) {
+            if (currentBuzzObject) {
+               currentBuzzObject.setTime(time);
+            }
+        };
+
         
 
-        SongPlayer.setVolume = function() {
-            currentBuzzObject.setVolume(90);
+        SongPlayer.setVolume = function(volume) {
+            if (currentBuzzObject) {
+                currentBuzzObject.setVolume(volume);
+            }
         };
 
         SongPlayer.play = function(song) {
-         	debugger;
-            if (currentSong !== song) {
+            song = song || Sonplayer.currentSong;
+            if (SongPlayer.currentSong !== song) {
          	  setSong(song);
-         	  playSong();
+         	  playSong(song);
 
-            } else if (currentSong === song) {
+            } else if (SongPlayer.currentSong === song) {
                  if (currentBuzzObject.isPaused()) {
-             		currentBuzzObject.play();
+             		playSong(song);
          		}
          	} 
      	};
@@ -102,8 +110,8 @@
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
             currentSongIndex++;
 
-            if (currentSongIndex > 0) {
-                stopSong();
+            if (currentSongIndex === currentAlbum.songs.length) {
+                stopSong(song);
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
